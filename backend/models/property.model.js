@@ -1,7 +1,11 @@
+import mongoose from "mongoose";
 
+const propertySchema = new mongoose.Schema(
+  {
     title: {
       type: String,
       required: true,
+      trim: true,
     },
     description: {
       type: String,
@@ -14,14 +18,17 @@
     city: {
       type: String,
       required: true,
+      trim: true,
     },
     area: {
       type: String,
       required: true,
+      trim: true,
     },
     pincode: {
       type: String,
       required: true,
+      trim: true,
     },
     propertyType: {
       type: String,
@@ -51,6 +58,7 @@
     furnishing: {
       type: String,
       enum: ["furnished", "semi-furnished", "unfurnished"],
+      default: "unfurnished",
     },
     amenities: [
       {
@@ -77,4 +85,9 @@
       default: 0,
     },
     viewedBy: [{ type: String }],
- 
+  },
+  { timestamps: true }
+);
+
+const Property = mongoose.model("Property", propertySchema);
+export default Property;

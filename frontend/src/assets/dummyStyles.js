@@ -233,8 +233,19 @@ export const sellerRequestsStyles = {
   contactInfo: "flex flex-col gap-3 mb-6",
   contactItem: "flex items-center gap-3 text-[0.9rem] text-[#475569] break-all",
 
-  // Button
-  approveButton: "w-full p-3 rounded-xl border-none bg-primary text-white font-bold cursor-pointer flex items-center justify-center gap-2 transition-transform duration-200 ease-in-out hover:-translate-y-[2px]",
+  // Button & Badges
+  approveButton: "btn bg-[#dcfce7] text-[#166534] border border-[#bbf7d0] hover:bg-emerald-200 py-2 px-4 rounded-xl text-sm font-bold flex items-center gap-1.5 transition-all",
+  rejectButton: "btn bg-[#fee2e2] text-[#991b1b] border border-[#fecaca] hover:bg-red-200 py-2 px-4 rounded-xl text-sm font-bold flex items-center gap-1.5 transition-all",
+  statusBadge: (isApproved) => `px-3 py-1 rounded-full text-xs font-extrabold uppercase tracking-wide ${isApproved ? 'bg-[#dcfce7] text-[#166534] border border-[#bbf7d0]' : 'bg-[#fef3c7] text-[#92400e] border border-[#fde68a]'}`,
+  listContainer: "flex flex-col gap-4",
+  cardHeader: "p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4",
+  userInfoWrapper: "flex items-center gap-4",
+  userDetails: "flex flex-col",
+  userName: "text-lg font-bold text-text-main",
+  userEmail: "text-sm text-text-muted",
+  userPhone: "text-xs text-text-muted mt-0.5",
+  actionsWrapper: "flex items-center gap-2",
+  emptyText: "text-text-muted text-base",
 };
 
 export const wishlistStyles = {
@@ -1089,6 +1100,9 @@ export const verifyEmailStyles = {
 };
 
 export const adminLayoutStyles = {
+  container: "flex h-screen bg-bg-alt overflow-hidden",
+  contentWrapper: "flex-1 flex flex-col min-w-0 h-full overflow-hidden transition-all duration-300 md:ml-[260px]",
+  main: "flex-1 overflow-y-auto p-5 md:p-8 relative scroll-smooth fade-in",
   layout: "flex h-screen bg-bg-alt overflow-hidden",
   mainWrapper: "flex-1 flex flex-col min-w-0 h-full overflow-hidden transition-all duration-300 md:ml-[260px]",
   mainContent: "flex-1 overflow-y-auto p-5 md:p-8 relative scroll-smooth fade-in",
@@ -1187,9 +1201,11 @@ export const sellerSidebarStyles = {
 };
 
 export const logoStyles = {
+  container: "font-bold text-primary flex items-center gap-3 no-underline whitespace-nowrap cursor-pointer",
   link: "font-bold text-primary flex items-center gap-3 no-underline whitespace-nowrap",
   iconWrapper: "bg-primary text-white p-2 rounded-[10px] flex items-center justify-center shadow-[0_4px_12px_rgba(13,110,89,0.2)]",
-  text: "tracking-[-0.02em] text-[#0d6e59] font-extrabold",
+  text: "tracking-[-0.02em] text-[#0d6e59] font-extrabold text-xl",
+  img: "h-9 w-auto max-h-9 object-contain shrink-0",
 };
 
 export const navbarStyles = {
